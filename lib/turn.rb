@@ -21,12 +21,10 @@ def winner?(board)
   else
     unless $game_over == true
       WINNING_COMBINATIONS.each_value do |w| 
-        # if [board[w[0]], board[w[1]], board[w[2]], "X"].uniq.length == 1
-        if board[w[0]] == board[w[1]] && board[w[0]] == board[w[2]] && board[w[0]] ==  "X"
+        if [board[w[0]], board[w[1]], board[w[2]], "X"].uniq.length == 1
           puts "X wins!\n\n"
           $game_over = true
-        # elsif [board[w[0]], board[w[1]], board[w[2]], "O"].uniq.length == 1
-        elsif board[w[0]] == board[w[1]] && board[w[0]] == board[w[2]] && board[w[0]] ==  "O"
+        elsif [board[w[0]], board[w[1]], board[w[2]], "O"].uniq.length == 1
           puts "O wins!\n\n"
           $game_over = true
         end
